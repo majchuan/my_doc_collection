@@ -115,6 +115,8 @@ docker compose up -d
 If using Nginx as a reverse proxy:
 
 Example for `/stock` subpath:
+Edit the file
+sudo nano /etc/nginx/sites-available/q-runners.com
 
 ```nginx
 location /stock/ {
