@@ -106,6 +106,8 @@ Use `psql` inside the container or from host if PostgreSQL is hosted externally.
 ---
 
 ## 7. Build and Run the Application
+## 7.1 Build frontend indvidual for small vps. 
+REACT_APP_API_URL="" npm run build
 
 From the root project directory:
 
