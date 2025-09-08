@@ -21,6 +21,12 @@ q-runners/
 
 Use `rsync` to copy the project from local to the droplet, excluding `node_modules` and `build` directories.
 
+## 2.1 Copy q-runners from apps-dev to apps-prod
+```Copy folder, To copy a directory, you need the -r (recursive) flag.
+cp -r /source/folder /destination/folder
+
+```copy files
+cp -r /source/folder/* /destination/folder/
 ```bash
 rsync -avz --progress --exclude='node_modules' --exclude='build' /path/to/q-runners username@your_droplet_ip:/apps
 ```
@@ -100,6 +106,8 @@ Use `psql` inside the container or from host if PostgreSQL is hosted externally.
 ---
 
 ## 7. Build and Run the Application
+## 7.1 Build frontend indvidual for small vps. 
+REACT_APP_API_URL="" npm run build
 
 From the root project directory:
 
