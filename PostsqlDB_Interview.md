@@ -221,25 +221,23 @@ CREATE TABLE orders (
 CREATE TABLE orders_2025 PARTITION OF orders
 FOR VALUES FROM ('2025-01-01') TO ('2026-01-01');
 
+BACKUP ,RESTORE AND REPLICATION
+pg_dump: Used to xport a PostgreSQL database into a script or a file.
+pg_restore: Restores from a non-plain format dump.
+psql: Can import plain SQL dumps.
 
+MONITORING AND MAINTENANCE
+pg_stat_statement:Tracks query preformance and frequence.
+pgAdmin: GUI for postgreSQL management
 
+VACUUMING AND AUTOVACUUM
+Vacuum: Cleans up dead tuples to reclaim space.
+Autovacuum:Bacground process that triggers vacuum based on threholds.
+Monitor with pg_stat_user_tables, and pg_stat_all_tables.
 
+DEADLOCKS.
+Use pg_stat_activity to inspect locks.
 
-
-
-6. Backup, Restore & Replication
-pg_dump, pg_restore, and psql for data migration
-
-WAL (Write-Ahead Logging) and point-in-time recovery
-
-Streaming replication and logical replication
-
-High availability setups (e.g., Patroni, repmgr)
-. Monitoring & Maintenance
-Monitoring tools: pg_stat_statements, pgAdmin, Prometheus + Grafana
-
-Vacuuming and autovacuum
-
-Detecting and resolving deadlocks
-
-Managing long-running queries
+LONG-RUNNING QUERIES
+Use pg_stat_activity to find queries running too long.
+kill with pg_terminate_backend(pid) 
