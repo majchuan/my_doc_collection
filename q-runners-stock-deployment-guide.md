@@ -20,6 +20,9 @@ q-runners/
 ## 2. Push Project to Droplet
 
 Use `rsync` to copy the project from local to the droplet, excluding `node_modules` and `build` directories.
+```bash
+rsync -avz --progress --exclude='node_modules' --exclude='build' /path/to/q-runners/ username@your_droplet_ip:/apps-dev/q-runners
+```
 
 ## 2.1 Copy q-runners from apps-dev to apps-prod
 ```Copy folder, To copy a directory, you need the -r (recursive) flag.
@@ -28,7 +31,7 @@ cp -r /source/folder /destination/folder
 ```copy files
 cp -r /source/folder/* /destination/folder/
 ```bash
-rsync -avz --progress --exclude='node_modules' --exclude='build' /path/to/q-runners username@your_droplet_ip:/apps
+rsync -avz --progress --exclude='node_modules' --exclude='build' /path/to/q-runners/ username@your_droplet_ip:/apps-prod/q-runners
 ```
 
 ---
